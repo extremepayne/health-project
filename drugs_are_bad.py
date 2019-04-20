@@ -1,9 +1,6 @@
 """Say things about drugs being bad."""
 import random
-import locale
 import time
-
-locale.setlocale(locale.LC_ALL, "en_US")
 
 # pylint: disable=C0103
 DRUG_FACTS = {
@@ -105,63 +102,85 @@ def ask(prompt, type_=None, min_=None, max_=None, range_=None):
             return ui
 
 
-dict_keys = list(DRUG_FACTS.keys())
-drug = ask("What drug is being used? ", str.lower, range_=dict_keys)
-if drug == "alcohol":
-    dict_keys = list(drug_types[drug].keys())
-    drug_subtype = ask(
-        "What kind of alcohol are you drinking? ", str.lower, range_=dict_keys
-    )
-    my_str = (
-        "How many "
-        + drug_types[drug][drug_subtype][1]
-        + "s a week are being comsumed? "
-    )
-    how_much = ask(my_str, int, 1, 50)
-    how_long = ask("How many years has this gone on? ", float, 0.25, 70)
-    cost = drug_types[drug][drug_subtype][0] * how_much * how_long * 52
-    to_print = "That much drugs costs ${:,.2f}!".format(cost)
-    print(to_print)
-elif drug == "cigarettes":
-    my_str = (
-        "How many " + drug_types[drug][1] + "s a week are being comsumed? "
-    )
-    how_much = ask(my_str, int, 1, 50)
-    how_long = ask("How many years has this gone on? ", float, 0.25, 70)
-    cost = drug_types[drug][0] * how_much * how_long * 52
-    to_print = "That much drugs costs ${:,.2f}!".format(cost)
-    print(to_print)
-else:  # meth
-    my_str = (
-        "How many " + drug_types[drug][1] + "s a week are being comsumed? "
-    )
-    how_much = ask(my_str, int, 1, 50)
-    how_long = ask("How many years has this gone on? ", float, 0.25, 70)
-    cost = drug_types[drug][0] * how_much * how_long * 52
-    to_print = "That much drugs costs ${:,.2f}!".format(cost)
-    print(to_print)
+def ask_yes_no(question):
+    """Ask the user a yes or no question, return a boolean variable."""
+    to_ask = question + "(y/n) "
+    output = input(to_ask)
+    while output not in ("y", "n"):
+        print('That is not "y" or "n"')
+        output = input(to_ask)
+    if output == "y":
+        rep = True
+    elif output == "n":
+        rep = False
+    return rep
 
-if cost < 100:
-    print("You could have bought", cost // 10, "pizzas with that much money!")
-elif cost < 1000:
+
+keep_going = True
+while keep_going:
+
+    dict_keys = list(DRUG_FACTS.keys())
+    drug = ask("What drug is being used? ", str.lower, range_=dict_keys)
+    if drug == "alcohol":
+        dict_keys = list(drug_types[drug].keys())
+        drug_subtype = ask(
+            "What kind of alcohol are you drinking? ",
+            str.lower,
+            range_=dict_keys,
+        )
+        my_str = (
+            "How many "
+            + drug_types[drug][drug_subtype][1]
+            + "s a week are being comsumed? "
+        )
+        how_much = ask(my_str, int, 1, 50)
+        how_long = ask("How many years has this gone on? ", float, 0.25, 70)
+        cost = drug_types[drug][drug_subtype][0] * how_much * how_long * 52
+        to_print = "That much drugs costs ${:,.2f}!".format(cost)
+        print(to_print)
+    elif drug == "cigarettes":
+        my_str = (
+            "How many " + drug_types[drug][1] + "s a week are being comsumed? "
+        )
+        how_much = ask(my_str, int, 1, 50)
+        how_long = ask("How many years has this gone on? ", float, 0.25, 70)
+        cost = drug_types[drug][0] * how_much * how_long * 52
+        to_print = "That much drugs costs ${:,.2f}!".format(cost)
+        print(to_print)
+    else:  # meth
+        my_str = (
+            "How many " + drug_types[drug][1] + "s a week are being comsumed? "
+        )
+        how_much = ask(my_str, int, 1, 50)
+        how_long = ask("How many years has this gone on? ", float, 0.25, 70)
+        cost = drug_types[drug][0] * how_much * how_long * 52
+        to_print = "That much drugs costs ${:,.2f}!".format(cost)
+        print(to_print)
+
+    if cost < 100:
+        print(
+            "You could have bought", cost // 10, "pizzas with that much money!"
+        )
+    elif cost < 1000:
+        print(
+            "You could have bought",
+            cost // 100,
+            "tickets to Disneyland with that much money!",
+        )
+    elif cost < 5000:
+        print("You could have bought a vacation to NYC with that much money!")
+    elif cost < 80000:
+        print("You could have bought a car with that much money!")
+    elif cost < 200000:
+        print("You could have bought an expensive car with that much money!")
+    else:
+        print("You could have bought a house with that much money!")
+
+    time.sleep(2)
+
     print(
-        "You could have bought",
-        cost // 100,
-        "tickets to Disneyland with that much money!",
+        "Did you know,",
+        DRUG_FACTS[drug][random.randint(0, len(DRUG_FACTS[drug]) - 1)],
     )
-elif cost < 5000:
-    print("You could have bought a vacation to NYC with that much money!")
-elif cost < 80000:
-    print("You could have bought a car with that much money!")
-elif cost < 200000:
-    print("You could have bought an expensive car with that much money!")
-else:
-    print("You could have bought a house with that much money!")
-
-time.sleep(2)
-
-print(
-    "Did you know,",
-    DRUG_FACTS[drug][random.randint(0, len(DRUG_FACTS[drug]) - 1)],
-)
+    keep_going = ask_yes_no("Would you like to calculate more? ")
 input("Press enter to exit.")
