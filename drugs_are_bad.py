@@ -23,7 +23,7 @@ alcohol-related condition. [facingaddiction.org]",
     ],
     "cigarettes": [
         "using cigarettes decreases your life expectancy by 10 years. \
-[standaz.com/tobacco-facts]"
+[standaz.com/tobacco-facts]",
         "cigarettes contain at least 70 carcinogens (which cause cancer.) \
 [standaz.com/tobacco-facts]",
         "tabacco use is the leading cause of preventable death -- worldwide. \
@@ -115,7 +115,10 @@ def ask_yes_no(question):
         rep = False
     return rep
 
-
+print("Welcome to Drug Cost Calculator!")
+time.sleep(1)
+print("First, think of you or someone you know who uses drugs, cigarettes, or alcohol.")
+time.sleep(5)
 keep_going = True
 while keep_going:
 
