@@ -45,14 +45,14 @@ will die prematurely from smoking-related causes. \
     ],
     "cocaine": [
         "cocaine is the second most trafficked illegal drug in the world. \
-        [drugfreeworld.org]"
+        [drugfreeworld.org]",
         "7.5% of 12th graders report using cocaine. [drugfreeworld.org]"
         "Cocaine addiction creates $11 billion in healthcare costs in the US. \
-        [michaelshouse.com]"
+        [michaelshouse.com]",
         "One-fourth of hospital room visits about drugs are about cocaine. \
-        [michaelshouse.com]"
+        [michaelshouse.com]",
         "Coca-cola used to contain cocaine, and extract from the same plant \
-        is still used in it today. []drugabuse.com]"
+        is still used in it today. []drugabuse.com]",
     ],
 }
 
@@ -129,9 +129,12 @@ def ask_yes_no(question):
         rep = False
     return rep
 
+
 print("Welcome to Drug Cost Calculator!")
 time.sleep(1)
-print("First, think of you or someone you know who uses drugs, cigarettes, or alcohol.")
+print(
+    "First, think of you or someone you know who uses drugs, cigarettes, or alcohol."
+)
 time.sleep(5)
 keep_going = True
 while keep_going:
