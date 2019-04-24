@@ -23,7 +23,7 @@ alcohol-related condition. [facingaddiction.org]",
     ],
     "cigarettes": [
         "using cigarettes decreases your life expectancy by 10 years. \
-[standaz.com/tobacco-facts]"
+[standaz.com/tobacco-facts]",
         "cigarettes contain at least 70 carcinogens (which cause cancer.) \
 [standaz.com/tobacco-facts]",
         "tabacco use is the leading cause of preventable death -- worldwide. \
@@ -129,7 +129,10 @@ def ask_yes_no(question):
         rep = False
     return rep
 
-
+print("Welcome to Drug Cost Calculator!")
+time.sleep(1)
+print("First, think of you or someone you know who uses drugs, cigarettes, or alcohol.")
+time.sleep(5)
 keep_going = True
 while keep_going:
 
@@ -152,16 +155,7 @@ while keep_going:
         cost = drug_types[drug][drug_subtype][0] * how_much * how_long * 52
         to_print = "That much drugs costs ${:,.2f}!".format(cost)
         print(to_print)
-    elif drug == "cigarettes":
-        my_str = (
-            "How many " + drug_types[drug][1] + "s a week are being comsumed? "
-        )
-        how_much = ask(my_str, int, 1, 50)
-        how_long = ask("How many years has this gone on? ", float, 0.25, 70)
-        cost = drug_types[drug][0] * how_much * how_long * 52
-        to_print = "That much drugs costs ${:,.2f}!".format(cost)
-        print(to_print)
-    else:  # meth
+    else:  # meth or cigarettes
         my_str = (
             "How many " + drug_types[drug][1] + "s a week are being comsumed? "
         )
