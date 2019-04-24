@@ -43,6 +43,17 @@ will die prematurely from smoking-related causes. \
         "in 2007, 4.5% of high school seniors reported having used meth. \
 [www.drugfreeworld.org]",
     ],
+    "cocaine": [
+        "cocaine is the second most trafficked illegal drug in the world. \
+        [drugfreeworld.org]"
+        "7.5% of 12th graders report using cocaine. [drugfreeworld.org]"
+        "Cocaine addiction creates $11 billion in healthcare costs in the US. \
+        [michaelshouse.com]"
+        "One-fourth of hospital room visits about drugs are about cocaine. \
+        [michaelshouse.com]"
+        "Coca-cola used to contain cocaine, and extract from the same plant \
+        is still used in it today. []drugabuse.com]"
+    ],
 }
 
 alcohol_types = {
@@ -56,10 +67,13 @@ cigarette_cost = (6.95, "pack")
 
 meth_cost = (30, "hit")
 
+cocaine_cost = (5, "line")
+
 drug_types = {
     "alcohol": alcohol_types,
     "meth": meth_cost,
     "cigarettes": cigarette_cost,
+    "cocaine": cocaine_cost,
 }
 
 
