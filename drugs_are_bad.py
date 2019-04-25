@@ -61,6 +61,10 @@ will die prematurely from smoking-related causes. \
         "40% of adult males arrested for crimes test postive for marijuana. \
         [drugfreeworld.org]",
     ],
+    "heroin": [
+        "There are 153,000 current users of heroin in the US. \
+        [drugfreeworld.org]"
+    ],
 }
 
 alcohol_types = {
@@ -78,12 +82,15 @@ cocaine_cost = (5, "line")
 
 weed_cost = (8, "gram")
 
+heroin_cost = (10, "bag")
+
 drug_types = {
     "alcohol": alcohol_types,
     "meth": meth_cost,
     "cigarettes": cigarette_cost,
     "cocaine": cocaine_cost,
     "weed": weed_cost,
+    "heroin": heroin_cost,
 }
 
 
