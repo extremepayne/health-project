@@ -54,6 +54,13 @@ will die prematurely from smoking-related causes. \
         "Coca-cola used to contain cocaine, and extract from the same plant \
         is still used in it today. []drugabuse.com]",
     ],
+    "weed": [
+        "3.8% of the world's population uses marijuana. [drugfreeworld.org]",
+        "6.7% of teens are current marijuana users. [drugfreeworld.org]",
+        "58% of teens say marijuana is easy to obtain. [drugfreeworld.org]",
+        "40% of adult males arrested for crimes test postive for marijuana. \
+        [drugfreeworld.org]",
+    ],
 }
 
 alcohol_types = {
@@ -69,11 +76,14 @@ meth_cost = (30, "hit")
 
 cocaine_cost = (5, "line")
 
+weed_cost = (8, "gram")
+
 drug_types = {
     "alcohol": alcohol_types,
     "meth": meth_cost,
     "cigarettes": cigarette_cost,
     "cocaine": cocaine_cost,
+    "weed": weed_cost,
 }
 
 
