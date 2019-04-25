@@ -60,10 +60,15 @@ will die prematurely from smoking-related causes. \
         "58% of teens say marijuana is easy to obtain. [drugfreeworld.org]",
         "40% of adult males arrested for crimes test postive for marijuana. \
         [drugfreeworld.org]",
+        'Whereas most of the websites on a search for "heroin" or \
+        "cocaine" are addiction recovery sites, a search for "marijuana"\
+         yeilds results from \nwebsites about getting a hold of weed \
+         (often  with questionable leaglity)',
     ],
     "heroin": [
         "There are 153,000 current users of heroin in the US. \
-        [drugfreeworld.org]"
+        [drugfreeworld.org]",
+        "Unlike many drugs, women are more likely to use opioids than men.",
     ],
 }
 
