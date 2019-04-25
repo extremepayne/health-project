@@ -52,7 +52,7 @@ will die prematurely from smoking-related causes. \
         "One-fourth of hospital room visits about drugs are about cocaine. \
         [michaelshouse.com]",
         "Coca-cola used to contain cocaine, and extract from the same plant \
-        is still used in it today. []drugabuse.com]",
+        is still used in it today. [drugabuse.com]",
     ],
     "weed": [
         "3.8% of the world's population uses marijuana. [drugfreeworld.org]",
